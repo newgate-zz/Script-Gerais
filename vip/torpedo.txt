@@ -1,0 +1,279 @@
+// GitHub: https://github.com/newgate/
+// Versão 1.0
+//****************************************************************************************
+
+que_temsky,42,127,5	script	Torpedo	101,{
+
+	set .NN$, "^0000FF [Torpedo] ^000000";
+	set @VIP, 2;
+	set @DELAY, 30000;
+
+	if (#Delay >= 1)
+	{
+		npctalk ""+StrCharInfo(0)+" Você deve esperar "+@DELAY / 1000 +" Segundos para utilizar o Torpedo Novamente";
+		addtimer @DELAY,"Torpedo::OnDelay";
+		close;	
+	}
+	else
+	{
+		if (getgmlevel() >= @VIP)
+		{
+
+			mes .NN$;
+			mes "Olá ^778877"+ strcharinfo(0) +"^000000 gostaria de Enviar um Torpedo ?";
+			next;
+			if(select("Sim:Não")== 2) close;
+			{
+				mes .NN$;
+				mes "Escolha a cor do da Mensagem.";
+				switch(select("Amarelo:Azul:Vermelho:Preto:Verde:Roxo:Cinza:Nenhuma"))
+				{
+
+					case 1:
+
+					eAmarelo:
+					next;
+					mes .NN$;
+					mes "Digite a Mensagem a ser Exibida: ";
+					input .MENSAGEM$;
+					mes "Sua mensagem esta Correta ?";
+					mes "^008B00Mensagem:^000000 "+.MENSAGEM$+".";
+					next;
+					switch(select("Sim Enviar:Não Corrigir:Cancelar"))
+					{
+						case 1:
+						
+						mes .NN$;
+						mes "Mensagem Enviada com Sucesso.";
+						announce ""+strcharinfo(0)+": "+.MENSAGEM$+" ",bc_all|bc_yellow;
+						set #Delay, 1;
+						close;
+					
+						case 2:
+
+						goto eAmarelo;
+
+						case 3:
+
+						next;
+						mes .NN$;
+						mes "Estarei aqui quando precizar de mim.";
+						close;
+					}
+
+					case 2:
+
+					eAzul:
+					next;
+					mes .NN$;
+					mes "Digite a Mensagem a ser Exibida: ";
+					input .MENSAGEM$;
+					mes "Sua mensagem esta Correta ?";
+					mes "^008B00Mensagem:^000000 "+.MENSAGEM$+".";
+					next;
+					switch(select("Sim Enviar:Não Corrigir:Cancelar"))
+					{
+						case 1:
+						
+						mes .NN$;
+						mes "Mensagem Enviada com Sucesso.";
+						announce ""+strcharinfo(0)+": "+.MENSAGEM$+" ",bc_all|bc_blue;
+						set #Delay, 1;
+						close;
+					
+						case 2:
+
+						goto eAzul;
+
+						case 3:
+
+						next;
+						mes .NN$;
+						mes "Estarei aqui quando precizar de mim.";
+						close;
+					}
+
+
+					case 3:
+
+					eVermelho:
+					next;
+					mes .NN$;
+					mes "Digite a Mensagem a ser Exibida: ";
+					input .MENSAGEM$;
+					mes "Sua mensagem esta Correta ?";
+					mes "^008B00Mensagem:^000000 "+.MENSAGEM$+".";
+					next;
+					switch(select("Sim Enviar:Não Corrigir:Cancelar"))
+					{
+						case 1:
+						
+						mes .NN$;
+						mes "Mensagem Enviada com Sucesso.";
+						announce ""+strcharinfo(0)+": "+.MENSAGEM$+" ",bc_all,0xD20000;
+						set #Delay, 1;
+						close;
+					
+						case 2:
+
+						goto eVermelho;
+
+						case 3:
+
+						next;
+						mes .NN$;
+						mes "Estarei aqui quando precizar de mim.";
+						close;
+					}
+
+
+					case 4:
+
+					ePreto:
+					next;
+					mes .NN$;
+					mes "Digite a Mensagem a ser Exibida: ";
+					input .MENSAGEM$;
+					mes "Sua mensagem esta Correta ?";
+					mes "^008B00Mensagem:^000000 "+.MENSAGEM$+".";
+					next;
+					switch(select("Sim Enviar: Não Corrigir: Cancelar"))
+					{
+						case 1:
+						mes .NN$;
+						mes "Mensagem Enviada com Sucesso.";
+						announce ""+strcharinfo(0)+": "+.MENSAGEM$+" ",bc_all,0x000000;
+						set #Delay, 1;
+						close;
+					
+						case 2:
+						goto ePreto;
+
+						case 3:
+						next;
+						mes .NN$;
+						mes "Estarei aqui quando precizar de mim. ";
+						close;
+					}
+
+					case 5:
+
+					eVerde:
+					next;
+					mes .NN$;
+					mes "Digite a Mensagem a ser Exibida: ";
+					input .MENSAGEM$;
+					mes "Sua mensagem esta Correta ?";
+					mes "^008B00Mensagem:^000000 "+.MENSAGEM$+".";
+					next;
+					switch(select("Sim Enviar:Não Corrigir:Cancelar"))
+					{
+						case 1:
+						
+						mes .NN$;
+						mes "Mensagem Enviada com Sucesso.";
+						announce ""+strcharinfo(0)+": "+.MENSAGEM$+" ",bc_all,0x99CC00;
+						set #Delay, 1;
+						close;
+					
+						case 2:
+
+						goto eVerde;
+
+						case 3:
+
+						next;
+						mes .NN$;
+						mes "Estarei aqui quando precizar de mim.";
+						close;
+					}
+
+
+					case 6:
+
+					eRoxo:
+					next;
+					mes .NN$;
+					mes "Digite a Mensagem a ser Exibida: ";
+					input .MENSAGEM$;
+					mes "Sua mensagem esta Correta ?";
+					mes "^008B00Mensagem:^000000 "+.MENSAGEM$+".";
+					next;
+					switch(select("Sim Enviar:Não Corrigir:Cancelar"))
+					{
+						case 1:
+						
+						mes .NN$;
+						mes "Mensagem Enviada com Sucesso.";
+						announce ""+strcharinfo(0)+": "+.MENSAGEM$+" ",bc_all,0xCC00FF;
+						set #Delay, 1;
+						close;
+					
+						case 2:
+						goto eRoxo;
+
+						case 3:
+						next;
+						mes .NN$;
+						mes "Estarei aqui quando precizar de mim.";
+						close;
+					}
+
+					case 7:
+
+					eCinza:
+					next;
+					mes .NN$;
+					mes "Digite a Mensagem a ser Exibida: ";
+					input .MENSAGEM$;
+					mes "Sua mensagem esta Correta ?";
+					mes "^008B00Mensagem:^000000 "+.MENSAGEM$+".";
+					next;
+					switch(select("Sim Enviar:Não Corrigir:Cancelar"))
+					{
+						case 1:
+						
+						mes .NN$;
+						mes "Mensagem Enviada com Sucesso.";
+						announce ""+strcharinfo(0)+": "+.MENSAGEM$+" ",bc_all,0xBAB9B9;
+						set #Delay, 1;
+						close;
+					
+						case 2:
+
+						goto eCinza;
+
+						case 3:
+
+						next;
+						mes .NN$;
+						mes "Estarei aqui quando precizar de mim.";
+						close;
+					}
+
+					case 8:
+					
+					next;
+					mes .NN$;
+					mes "Quando precizar de mim sabe onde me encontrar.";
+					close;
+				}
+
+			}
+
+		}
+		else
+		{
+			mes .NN$;
+			mes "Apenas Player's VIP podem utilizar este NPC.";
+			mes "Acesse nosso site e saiba como se tornar um VIP.";
+			close;
+		}
+	}
+
+	
+	OnDelay:
+	npctalk "Pronto "+StrCharInfo(0)+" você ja pode utilizar o Torpedo.";
+	set #Delay, -1;
+	close;
+}
