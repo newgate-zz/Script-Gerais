@@ -1,0 +1,44 @@
+prontera,183,214,5	script	Casa Do Administrador	811,{
+set @gmlvl,90; //Level Máximo de GM que pode acessar o menu GM e entrar na Base dos GM's
+set @NPC$,"^ff0000 Sala ViP ^000000";
+
+set @gm,getgmlevel();
+if(@gm>90) goto vale0;
+mes @NPC$;
+mes "A Base dos GMs só pode ser acessada por GMs.";
+mes "A Base foi construida para os GMs descansarem e se reunirem";
+mes "Desculpe, só Newgate pode entrar";
+close;
+
+vale0:
+mes @NPC$;
+mes "Olá GM ^5566FF"+strcharinfo(0)+"^000000. Você deseja entrar na Base?";
+next;
+mes @NPC$;
+mes "Não tem nenhum perigo, a Base foi construida para os GMs descansarem e se reunirem";
+next;
+mes @NPC$;
+mes "Há muitas coisas na Base, Muitos tesouros, muitos esconderijos.";
+next;
+mes @NPC$;
+mes "Você quer entrar agora?";
+next;
+menu "Sim",sim,"Não",cancelar;
+
+sim:
+mes @NPC$;
+mes "Tenha uma boa visita, GM ^5566FF"+strcharinfo(0)+"^000000!";
+next;
+warp "prontera",17,16;
+close;
+
+cancelar:
+mes @NPC$;
+mes "Tudo bem, GM ^5566FF"+strcharinfo(0)+"^000000, fale comigo quando quiser ir á base.";
+close;
+
+OnInit:
+waitingroom "Porteiro GM",0,"",0;
+end;
+
+}
