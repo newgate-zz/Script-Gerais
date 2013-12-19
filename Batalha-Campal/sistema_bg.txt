@@ -16,7 +16,7 @@ bat_room	mapflag	noteleport
 bat_room	mapflag	nosave	SavePoint
 
 // Teleportador das Batalhas Campais - Entrada
-// *********************************************************************
+// ********************************************************************
 
 payon,189,104,3	script	Emissária de Maroll::BatRecruit	728,{
 	mes "[Emissária de Maroll]";
