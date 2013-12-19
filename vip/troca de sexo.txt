@@ -1,0 +1,17 @@
+// GitHub: https://github.com/newgate/
+// Versão 1.0
+//****************************************************************************************
+
+que_temsky,48,127,4	script	Troca de Sexo	78,{
+show "Olá [^0000FF"+ strcharinfo(0) +"^000000] gostaria de trocar de sexo?";
+next;
+menu "Sim",s,"Não",n;
+s:
+show "Muito bem como quiser...";
+announce "O player "+ strcharinfo(0) +" trocou de sexo.",bc_yellow;
+changesex;
+end;
+n:
+show "Volte quando quiser...";
+close;
+}
