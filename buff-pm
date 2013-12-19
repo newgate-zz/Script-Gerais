@@ -1,0 +1,16 @@
+-	script	assistente	-1,{
+	OnWhisperGlobal:
+	if(getgmlevel() >= 1)
+	
+	if(compare(@whispervar0$,"buffs")){
+		skilleffect 29,0; sc_start 32, 600000, 10; 		// Increase Agi
+		skilleffect 34,0; sc_start 30, 600000, 10; 		// Blessing
+		skilleffect 33,0; sc_start SC_ANGELUS,360000,10; 	// Angelus
+	}
+	if(compare(@whispervar0$,"repair")){
+		atcommand "@repairall";
+		end;
+
+		end;
+	}
+}
